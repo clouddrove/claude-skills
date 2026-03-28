@@ -181,6 +181,50 @@ myapp/
 └── .helmignore             # Files to exclude from packaging
 ```
 
+### .helmignore
+
+The `.helmignore` file controls which files are excluded when packaging a chart with `helm package`. It uses the same syntax as `.gitignore`. Keeping the package lean avoids shipping unnecessary files to the cluster or OCI registry.
+
+```
+# Version control -- not needed in the packaged chart
+.git
+.gitignore
+
+# OS and editor artifacts
+.DS_Store
+*.swp
+*.bak
+*.tmp
+*~
+.idea/
+.vscode/
+
+# Language build artifacts
+__pycache__/
+*.pyc
+
+# Packaged charts -- avoid nesting .tgz inside a chart
+*.tgz
+
+# CI/CD configuration -- not part of the runtime chart
+.github/
+.gitlab-ci.yml
+.circleci/
+
+# Project docs and metadata -- not needed at deploy time
+tests/
+docs/
+README.md
+CHANGELOG.md
+LICENSE
+```
+
+**Why it matters:**
+
+- `helm package` includes every file under the chart directory by default. Without `.helmignore`, the `.tgz` artifact can contain git history, CI configs, documentation, and editor metadata -- none of which are useful at install time.
+- Smaller chart archives mean faster pushes to OCI registries and faster `helm install` from remote repositories.
+- Excluding `*.tgz` prevents accidentally nesting a previously packaged chart inside itself.
+
 ### Chart.yaml
 
 ```yaml

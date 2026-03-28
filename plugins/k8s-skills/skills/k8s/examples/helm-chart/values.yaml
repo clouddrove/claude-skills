@@ -216,6 +216,22 @@ extraVolumeMounts: []
 # -- Extra volumes (appended to the default tmp volume)
 extraVolumes: []
 
+# ---------------------------------------------------------------------------
+# ConfigMap
+# ---------------------------------------------------------------------------
+# Inject application configuration as a ConfigMap mounted at
+# /etc/webapp/config inside the container.
+config:
+  enabled: false
+  data: {}
+  # Example:
+  # data:
+  #   LOG_LEVEL: "info"
+  #   MAX_CONNECTIONS: "100"
+  #   config.yaml: |
+  #     server:
+  #       port: 8080
+
 # -- Additional pod annotations
 podAnnotations: {}
 
