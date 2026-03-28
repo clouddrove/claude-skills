@@ -11,7 +11,8 @@ This plugin gives Claude deep knowledge of Kubernetes operations, covering both 
 - **Helm operations** — Chart management, values handling, Helmfile, chart authoring and testing
 - **Security** — RBAC patterns, Pod Security Standards, network policies, secrets management
 - **Monitoring** — Prometheus alerting rules, ServiceMonitor patterns, Grafana dashboard guidelines
-- **Diagnostic scripts** — Pod diagnosis and cluster health check automation
+- **Diagnostic scripts** — Pod diagnosis, cluster health, RBAC audit, namespace setup
+- **Examples** — Complete Helm chart and multi-environment Helmfile ready to copy and customize
 
 ## Installation
 
@@ -35,9 +36,9 @@ Once installed, the skill triggers automatically when you mention Kubernetes-rel
 > Create Prometheus alerting rules for my app
 ```
 
-### Diagnostic Scripts
+### Scripts
 
-The plugin includes two diagnostic scripts that Claude can run for you:
+The plugin includes four scripts that Claude can run for you:
 
 ```bash
 # Diagnose a specific pod
@@ -49,9 +50,25 @@ bash scripts/diagnose.sh -n production --all
 # Cluster health overview
 bash scripts/cluster-health.sh
 
-# Health check for a specific context
-bash scripts/cluster-health.sh --context production-cluster
+# Audit RBAC permissions across the cluster
+bash scripts/rbac-audit.sh
+
+# Audit a specific namespace
+bash scripts/rbac-audit.sh --namespace production
+
+# Generate production-ready namespace manifests
+bash scripts/namespace-setup.sh my-namespace
+
+# Generate and apply directly
+bash scripts/namespace-setup.sh my-namespace --apply
 ```
+
+### Examples
+
+Copy and customize these real-world templates:
+
+- **`examples/helm-chart/`** — Complete production Helm chart with Deployment, Service, Ingress, HPA, PDB, ServiceMonitor, and restricted Pod Security Standards
+- **`examples/helmfile/`** — Multi-environment Helmfile (dev, staging, production) managing PostgreSQL, Redis, webapp, and kube-prometheus-stack
 
 ## Structure
 
@@ -64,9 +81,14 @@ skills/k8s/
 │   ├── security.md           # RBAC, Pod Security Standards, network policies
 │   ├── monitoring.md         # Prometheus, Grafana, alerting rules
 │   └── helm.md               # Helm operations, chart authoring, Helmfile
-└── scripts/
-    ├── diagnose.sh           # Pod diagnostic tool
-    └── cluster-health.sh     # Cluster health overview
+├── scripts/
+│   ├── diagnose.sh           # Pod diagnostic tool
+│   ├── cluster-health.sh     # Cluster health overview
+│   ├── rbac-audit.sh         # RBAC permissions audit
+│   └── namespace-setup.sh    # Production namespace generator
+└── examples/
+    ├── helm-chart/           # Complete production Helm chart
+    └── helmfile/             # Multi-environment Helmfile setup
 ```
 
 ## License

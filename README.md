@@ -53,6 +53,8 @@ Once installed, skills trigger automatically based on context. Just ask naturall
 > Set up RBAC for a CI/CD service account
 > Create Prometheus alerting rules for pod failures
 > Help me write a Helm chart for my app
+> Set up a new namespace with quotas and network policies
+> Audit RBAC permissions in my cluster
 ```
 
 ## k8s-skills
@@ -66,7 +68,8 @@ The Kubernetes skill covers both day-to-day operations and platform engineering:
 | **Helm** | Chart management, values handling, Helmfile, chart authoring, testing |
 | **Security** | RBAC patterns, Pod Security Standards, network policies, secrets management |
 | **Monitoring** | Prometheus alerting rules, ServiceMonitor patterns, Grafana dashboards, USE/RED methods |
-| **Scripts** | `diagnose.sh` for pod diagnostics, `cluster-health.sh` for cluster overview |
+| **Scripts** | `diagnose.sh`, `cluster-health.sh`, `rbac-audit.sh`, `namespace-setup.sh` |
+| **Examples** | Complete Helm chart, multi-environment Helmfile (dev/staging/prod) |
 
 <details>
 <summary>Directory structure</summary>
@@ -81,9 +84,14 @@ plugins/k8s-skills/
 │   │   ├── security.md           # RBAC, Pod Security Standards, network policies
 │   │   ├── monitoring.md         # Prometheus, Grafana, alerting rules
 │   │   └── helm.md               # Helm operations, chart authoring, Helmfile
-│   └── scripts/
-│       ├── diagnose.sh           # Pod diagnostic tool
-│       └── cluster-health.sh     # Cluster health overview
+│   ├── scripts/
+│   │   ├── diagnose.sh           # Pod diagnostic tool
+│   │   ├── cluster-health.sh     # Cluster health overview
+│   │   ├── rbac-audit.sh         # RBAC permissions audit
+│   │   └── namespace-setup.sh    # Production namespace generator
+│   └── examples/
+│       ├── helm-chart/           # Complete production Helm chart
+│       └── helmfile/             # Multi-environment Helmfile setup
 └── README.md
 ```
 
