@@ -1,6 +1,6 @@
 ---
 name: k8s
-description: "Kubernetes operations, troubleshooting, and platform engineering. Trigger for: kubectl, pods, deployments, services, ingress, Helm charts, K8s manifests, RBAC, pod security, network policies, CrashLoopBackOff, OOMKilled, ImagePullBackOff, node scheduling, HPA, cluster health, container debugging, rollbacks. Also for implicit K8s queries: \"why is my service down\", \"pod keeps restarting\", \"container out of memory\", \"how to set resource limits\", \"create a namespace with quotas\", \"audit cluster permissions\", \"canary deployment\", \"blue-green deployment\", \"rolling restart\". Tool-specific terms: kustomize, kubectl, kubelet, kubeconfig, helm install, helm upgrade, helmfile, prometheus rules, servicemonitor, grafana dashboard, ArgoCD, flux, gitops. Trigger even when the user does not explicitly say Kubernetes."
+description: "Kubernetes operations, troubleshooting, and platform engineering. Trigger for: kubectl, pods, deployments, services, ingress, Helm charts, K8s manifests, RBAC, pod security, network policies, CrashLoopBackOff, OOMKilled, ImagePullBackOff, node scheduling, HPA, cluster health, container debugging, rollbacks. Implicit queries: \"which apps are failing\", \"compare namespaces\", \"what is broken\", \"is everything healthy\", \"check cluster status\", \"why is my service down\", \"pod keeps restarting\", \"container out of memory\", \"set resource limits\", \"create namespace with quotas\", \"audit permissions\", \"canary deployment\", \"rolling restart\", \"scale up\", \"scale down\". Tools: kustomize, kubectl, kubelet, kubeconfig, helm, helmfile, prometheus, servicemonitor, grafana, ArgoCD, flux, gitops. Trigger even without the word Kubernetes."
 ---
 
 # Kubernetes Operations & Platform Engineering
@@ -10,6 +10,11 @@ This skill covers day-to-day Kubernetes operations (troubleshooting, debugging, 
 **Scripts:** Always run scripts with `--help` first. Do not read script source unless debugging the script itself.
 
 **References:** Load reference files on demand based on the task at hand. Do not pre-load all references.
+
+**Slash commands:** Users can also invoke these directly:
+- `/k8s-skills:k8s-debug [pod] [namespace]` — Diagnose a pod or deployment
+- `/k8s-skills:k8s-deploy [action] [name] [namespace]` — Deploy, rollback, or restart
+- `/k8s-skills:k8s-health [namespace]` — Cluster or namespace health check
 
 ---
 
