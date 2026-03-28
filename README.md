@@ -45,16 +45,23 @@ Skills are structured knowledge packs that Claude Code loads on demand. When you
 
 ### Usage
 
-Once installed, skills trigger automatically based on context. Just ask naturally:
+Skills trigger automatically based on context. Just ask naturally:
 
 ```
 > My pod is stuck in CrashLoopBackOff, how do I debug it?
 > Write a production-ready Deployment with HPA and PDB
-> Set up RBAC for a CI/CD service account
-> Create Prometheus alerting rules for pod failures
-> Help me write a Helm chart for my app
-> Set up a new namespace with quotas and network policies
-> Audit RBAC permissions in my cluster
+> Which apps are failing in production?
+> Compare resource usage between staging and production
+> Is everything healthy in the cluster?
+```
+
+Or use slash commands for direct access:
+
+```
+/k8s-skills:k8s-health                          # Cluster health check
+/k8s-skills:k8s-health production               # Namespace health check
+/k8s-skills:k8s-debug my-pod production          # Debug a specific pod
+/k8s-skills:k8s-deploy rollback myapp production  # Rollback a deployment
 ```
 
 ## k8s-skills
@@ -68,6 +75,7 @@ The Kubernetes skill covers both day-to-day operations and platform engineering:
 | **Helm** | Chart management, values handling, Helmfile, chart authoring, testing |
 | **Security** | RBAC patterns, Pod Security Standards, network policies, secrets management |
 | **Monitoring** | Prometheus alerting rules, ServiceMonitor patterns, Grafana dashboards, USE/RED methods |
+| **Commands** | `/k8s-health`, `/k8s-debug`, `/k8s-deploy` — direct access slash commands |
 | **Scripts** | `diagnose.sh`, `cluster-health.sh`, `rbac-audit.sh`, `namespace-setup.sh` |
 | **Examples** | Complete Helm chart, multi-environment Helmfile (dev/staging/prod) |
 
@@ -76,6 +84,10 @@ The Kubernetes skill covers both day-to-day operations and platform engineering:
 
 ```
 plugins/k8s-skills/
+├── commands/
+│   ├── k8s-debug.md              # /k8s-debug — pod/deployment diagnosis
+│   ├── k8s-deploy.md             # /k8s-deploy — deploy, rollback, restart
+│   └── k8s-health.md             # /k8s-health — cluster/namespace health check
 ├── skills/k8s/
 │   ├── SKILL.md                  # Core skill — command reference, troubleshooting tree, workflows
 │   ├── references/

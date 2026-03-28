@@ -26,15 +26,25 @@ This plugin gives Claude deep knowledge of Kubernetes operations, covering both 
 
 ## Usage
 
-Once installed, the skill triggers automatically when you mention Kubernetes-related topics:
+The skill triggers automatically when you mention Kubernetes-related topics:
 
 ```
 > My pod is in CrashLoopBackOff
 > Write a deployment manifest with HPA
-> Set up RBAC for a CI/CD service account
-> Help me debug why this service isn't reachable
-> Create Prometheus alerting rules for my app
+> Which apps are failing in production?
+> Compare these 2 namespaces
+> Is everything healthy in the cluster?
 ```
+
+### Slash Commands
+
+For direct access, use these commands:
+
+| Command | What it does |
+|---------|-------------|
+| `/k8s-skills:k8s-health [namespace]` | Cluster or namespace health check with pass/warn/fail summary |
+| `/k8s-skills:k8s-debug [pod] [namespace]` | Diagnose a pod or deployment (status, events, logs, resources) |
+| `/k8s-skills:k8s-deploy [action] [name] [ns]` | Deploy, rollback, or restart (actions: apply, upgrade, rollback, restart) |
 
 ### Scripts
 
@@ -73,6 +83,10 @@ Copy and customize these real-world templates:
 ## Structure
 
 ```
+commands/
+├── k8s-debug.md              # /k8s-debug — pod/deployment diagnosis
+├── k8s-deploy.md             # /k8s-deploy — deploy, rollback, restart
+└── k8s-health.md             # /k8s-health — cluster/namespace health check
 skills/k8s/
 ├── SKILL.md                  # Core skill — command reference, troubleshooting tree, workflows
 ├── references/
