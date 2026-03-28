@@ -75,6 +75,7 @@ The Kubernetes skill covers both day-to-day operations and platform engineering:
 | **Helm** | Chart management, values handling, Helmfile, chart authoring, testing |
 | **Security** | RBAC patterns, Pod Security Standards, network policies, secrets management |
 | **Monitoring** | Prometheus alerting rules, ServiceMonitor patterns, Grafana dashboards, USE/RED methods |
+| **GitOps** | ArgoCD and Flux — Application CRDs, sync policies, app-of-apps, image automation, secrets |
 | **Commands** | `/k8s-health`, `/k8s-debug`, `/k8s-deploy` — direct access slash commands |
 | **Scripts** | `diagnose.sh`, `cluster-health.sh`, `rbac-audit.sh`, `namespace-setup.sh` |
 | **Examples** | Complete Helm chart, multi-environment Helmfile (dev/staging/prod) |
@@ -95,7 +96,8 @@ plugins/k8s-skills/
 │   │   ├── manifests.md          # Production-ready YAML templates
 │   │   ├── security.md           # RBAC, Pod Security Standards, network policies
 │   │   ├── monitoring.md         # Prometheus, Grafana, alerting rules
-│   │   └── helm.md               # Helm operations, chart authoring, Helmfile
+│   │   ├── helm.md               # Helm operations, chart authoring, Helmfile
+│   │   └── gitops.md             # ArgoCD and Flux — sync policies, app-of-apps, secrets
 │   ├── scripts/
 │   │   ├── diagnose.sh           # Pod diagnostic tool
 │   │   ├── cluster-health.sh     # Cluster health overview

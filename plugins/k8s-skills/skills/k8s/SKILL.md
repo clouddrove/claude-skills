@@ -356,6 +356,12 @@ Load these references as needed based on the task:
   - Helmfile for multi-chart deployments
   - Chart testing and linting
 
+- **[GitOps Reference](./references/gitops.md)** — ArgoCD and Flux:
+  - ArgoCD Application CRD, sync policies, app-of-apps, ApplicationSet
+  - Flux GitRepository, Kustomization, HelmRelease, image automation
+  - Environment promotion, secrets in GitOps (SOPS, sealed-secrets)
+  - ArgoCD vs Flux comparison and rollback patterns
+
 - **[Examples](./examples/)** — Ready-to-use templates:
   - Complete Helm chart for a production web application
   - Helmfile config for multi-environment deployments
@@ -376,3 +382,5 @@ Load these references as needed based on the task:
 | Audit RBAC permissions | Run `scripts/rbac-audit.sh` |
 | Helm chart template | Copy from `examples/helm-chart/` and customize |
 | Multi-env Helmfile | Copy from `examples/helmfile/` and customize |
+| Set up ArgoCD or Flux | Read `gitops.md` for Application CRDs, sync policies, and repo structure |
+| GitOps secrets | Read `gitops.md` → Shared Patterns → Secrets in GitOps |

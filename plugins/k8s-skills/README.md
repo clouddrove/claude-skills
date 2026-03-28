@@ -11,6 +11,7 @@ This plugin gives Claude deep knowledge of Kubernetes operations, covering both 
 - **Helm operations** — Chart management, values handling, Helmfile, chart authoring and testing
 - **Security** — RBAC patterns, Pod Security Standards, network policies, secrets management
 - **Monitoring** — Prometheus alerting rules, ServiceMonitor patterns, Grafana dashboard guidelines
+- **GitOps** — ArgoCD and Flux: Application CRDs, sync policies, app-of-apps, image automation, secrets management
 - **Diagnostic scripts** — Pod diagnosis, cluster health, RBAC audit, namespace setup
 - **Examples** — Complete Helm chart and multi-environment Helmfile ready to copy and customize
 
@@ -94,7 +95,8 @@ skills/k8s/
 │   ├── manifests.md          # Production-ready YAML templates
 │   ├── security.md           # RBAC, Pod Security Standards, network policies
 │   ├── monitoring.md         # Prometheus, Grafana, alerting rules
-│   └── helm.md               # Helm operations, chart authoring, Helmfile
+│   ├── helm.md               # Helm operations, chart authoring, Helmfile
+│   └── gitops.md             # ArgoCD and Flux — sync, app-of-apps, secrets
 ├── scripts/
 │   ├── diagnose.sh           # Pod diagnostic tool
 │   ├── cluster-health.sh     # Cluster health overview
