@@ -1,6 +1,6 @@
 ---
 name: k8s
-description: "Kubernetes operations, troubleshooting, and platform engineering. This skill should be used whenever the user mentions kubectl, pods, deployments, services, ingress, Helm charts, Kubernetes manifests, RBAC, pod security, network policies, CrashLoopBackOff, OOMKilled, ImagePullBackOff, node scheduling, HPA autoscaling, cluster health, container debugging, rollbacks, or any Kubernetes-related infrastructure task. Also trigger when users ask about scaling services, checking pod logs, debugging failed deployments, writing K8s YAML, setting up monitoring with Prometheus, or managing secrets in Kubernetes -- even if they do not explicitly say Kubernetes."
+description: "Kubernetes operations, troubleshooting, and platform engineering. Trigger for: kubectl, pods, deployments, services, ingress, Helm charts, K8s manifests, RBAC, pod security, network policies, CrashLoopBackOff, OOMKilled, ImagePullBackOff, node scheduling, HPA, cluster health, container debugging, rollbacks. Also for implicit K8s queries: \"why is my service down\", \"pod keeps restarting\", \"container out of memory\", \"how to set resource limits\", \"create a namespace with quotas\", \"audit cluster permissions\", \"canary deployment\", \"blue-green deployment\", \"rolling restart\". Tool-specific terms: kustomize, kubectl, kubelet, kubeconfig, helm install, helm upgrade, helmfile, prometheus rules, servicemonitor, grafana dashboard, ArgoCD, flux, gitops. Trigger even when the user does not explicitly say Kubernetes."
 ---
 
 # Kubernetes Operations & Platform Engineering
@@ -284,6 +284,37 @@ bash scripts/cluster-health.sh
 bash scripts/cluster-health.sh --context <context-name>
 ```
 
+### RBAC Audit
+
+Run `bash scripts/rbac-audit.sh --help` for full usage.
+
+Audits RBAC permissions across the cluster: finds cluster-admin bindings, wildcard permissions, default service account usage, secrets access, and unused service accounts.
+
+```bash
+# Audit entire cluster
+bash scripts/rbac-audit.sh
+
+# Audit specific namespace
+bash scripts/rbac-audit.sh --namespace production
+```
+
+### Namespace Setup
+
+Run `bash scripts/namespace-setup.sh --help` for full usage.
+
+Generates production-ready namespace setup manifests: namespace with PSS labels, ResourceQuota, LimitRange, NetworkPolicy (default deny), dedicated ServiceAccount, and RBAC.
+
+```bash
+# Generate manifests to stdout
+bash scripts/namespace-setup.sh my-namespace
+
+# Write to files
+bash scripts/namespace-setup.sh my-namespace --output ./manifests/
+
+# Apply directly (with confirmation)
+bash scripts/namespace-setup.sh my-namespace --apply
+```
+
 ---
 
 ## Reference Files
@@ -320,6 +351,11 @@ Load these references as needed based on the task:
   - Helmfile for multi-chart deployments
   - Chart testing and linting
 
+- **[Examples](./examples/)** — Ready-to-use templates:
+  - Complete Helm chart for a production web application
+  - Helmfile config for multi-environment deployments
+  - Environment-specific values (dev, staging, production)
+
 ### Quick Task Reference
 
 | Task | Action |
@@ -331,3 +367,7 @@ Load these references as needed based on the task:
 | Security audit or RBAC | Read `security.md` for Role/Binding patterns and Pod Security Standards |
 | Cluster health check | Run `scripts/cluster-health.sh` |
 | Diagnose specific pod | Run `scripts/diagnose.sh -n <ns> <pod>` |
+| Set up a new namespace | Run `scripts/namespace-setup.sh` or read `manifests.md` |
+| Audit RBAC permissions | Run `scripts/rbac-audit.sh` |
+| Helm chart template | Copy from `examples/helm-chart/` and customize |
+| Multi-env Helmfile | Copy from `examples/helmfile/` and customize |
