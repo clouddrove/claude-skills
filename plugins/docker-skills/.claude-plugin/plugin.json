@@ -1,0 +1,9 @@
+{
+  "name": "docker-skills",
+  "version": "0.1.0",
+  "description": "Docker operations — Dockerfile best practices, Compose, registry, image optimization, and troubleshooting",
+  "author": {
+    "name": "CloudDrove",
+    "email": "hello@clouddrove.com"
+  }
+}

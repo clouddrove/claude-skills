@@ -20,6 +20,17 @@
       "skills": [
         "./plugins/k8s-skills/skills/k8s"
       ]
+    },
+    {
+      "name": "docker-skills",
+      "description": "Docker operations — Dockerfile best practices, Compose, registry, image optimization, and troubleshooting",
+      "source": "./plugins/docker-skills",
+      "category": "development",
+      "version": "0.1.0",
+      "strict": false,
+      "skills": [
+        "./plugins/docker-skills/skills/docker"
+      ]
     }
   ]
 }

@@ -23,9 +23,9 @@ Skills are structured knowledge packs that Claude Code loads on demand. When you
 | Plugin | Description | Status |
 |--------|-------------|--------|
 | [**k8s-skills**](./plugins/k8s-skills) | Kubernetes operations, troubleshooting, and platform engineering | :white_check_mark: Available |
+| [**docker-skills**](./plugins/docker-skills) | Docker — Dockerfile, Compose, registry, image optimization | :white_check_mark: Available |
 | **terraform-skills** | Terraform modules, state management, and IaC patterns | :construction: Planned |
 | **aws-skills** | AWS services, architecture, and operations | :construction: Planned |
-| **docker-skills** | Docker, container builds, and optimization | :construction: Planned |
 
 ## Quick Start
 
