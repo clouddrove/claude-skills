@@ -1,15 +1,12 @@
 <p align="center">
-  <a href="https://github.com/clouddrove/claude-skills">
-    <img src="https://img.shields.io/github/v/release/clouddrove/claude-skills?style=flat-square" alt="Release">
-  </a>
   <a href="https://github.com/clouddrove/claude-skills/blob/main/LICENSE">
-    <img src="https://img.shields.io/github/license/clouddrove/claude-skills?style=flat-square" alt="License: MIT">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT">
   </a>
-  <a href="https://github.com/clouddrove/claude-skills/stargazers">
-    <img src="https://img.shields.io/github/stars/clouddrove/claude-skills?style=flat-square" alt="Stars">
+  <a href="https://github.com/clouddrove/claude-skills">
+    <img src="https://img.shields.io/badge/version-0.1.0-green.svg" alt="Version: 0.1.0">
   </a>
-  <a href="https://github.com/clouddrove/claude-skills/issues">
-    <img src="https://img.shields.io/github/issues/clouddrove/claude-skills?style=flat-square" alt="Issues">
+  <a href="https://github.com/clouddrove/claude-skills">
+    <img src="https://img.shields.io/badge/claude--code-plugin-7C3AED.svg" alt="Claude Code Plugin">
   </a>
 </p>
 
