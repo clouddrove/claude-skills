@@ -1,0 +1,25 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "clouddrove-claude-skills",
+  "owner": {
+    "name": "CloudDrove",
+    "email": "hello@clouddrove.com"
+  },
+  "metadata": {
+    "description": "DevOps skills for Claude Code — Kubernetes, Terraform, AWS, and more",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "k8s-skills",
+      "description": "Kubernetes troubleshooting, manifests, Helm, security, and monitoring",
+      "source": "./plugins/k8s-skills",
+      "category": "development",
+      "version": "0.1.0",
+      "strict": false,
+      "skills": [
+        "./plugins/k8s-skills/skills/k8s"
+      ]
+    }
+  ]
+}
