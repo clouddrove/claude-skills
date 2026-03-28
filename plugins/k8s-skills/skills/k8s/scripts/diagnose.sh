@@ -65,6 +65,10 @@ if ! command -v kubectl &>/dev/null; then
     echo "Error: kubectl not found in PATH" >&2
     exit 1
 fi
+if ! command -v python3 &>/dev/null; then
+    echo "Error: python3 not found in PATH (required for JSON parsing)" >&2
+    exit 1
+fi
 
 NS_FLAG=""
 if [[ -n "$NAMESPACE" ]]; then

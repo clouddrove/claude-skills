@@ -152,6 +152,7 @@ metadata:
 spec:
   serviceName: postgres-headless    # Required: headless service name
   replicas: 3
+  revisionHistoryLimit: 5           # Keep 5 revisions for rollback
   podManagementPolicy: OrderedReady # Sequential startup (default)
   updateStrategy:
     type: RollingUpdate
