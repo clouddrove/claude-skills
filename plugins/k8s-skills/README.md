@@ -93,4 +93,4 @@ skills/k8s/
 
 ## License
 
-MIT
+Apache 2.0

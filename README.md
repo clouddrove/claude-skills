@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/clouddrove/claude-skills/blob/main/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT">
+    <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="License: Apache 2.0">
   </a>
   <a href="https://github.com/clouddrove/claude-skills">
     <img src="https://img.shields.io/badge/version-0.1.0-green.svg" alt="Version: 0.1.0">
@@ -143,7 +143,7 @@ This keeps Claude's context efficient while making deep knowledge available when
 
 ## License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 — see the [LICENSE](LICENSE) file for details.
 
 ## About CloudDrove
 
